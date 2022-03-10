@@ -23,8 +23,12 @@
                         <td>{{$user->email}}</td>
                         <td>{{count( $user->books->toArray() )}}</td>
                         <td>
-                            <a href="{{route('Users.edit',$user->user_id)}}" class="waves-effect waves-light btn-small"><i class="material-icons">edit</i></a>
-                            <a class="waves-effect waves-light btn-small"><i class="material-icons">delete</i></a>
+                            <form action="{{route('Users.destroy',$user->user_id)}}" method="POST">
+                                <a href="{{route('Users.edit',$user->user_id)}}" class="waves-effect waves-light btn-small"><i class="material-icons">edit</i></a>
+                                @method('DELETE')
+                                @csrf
+                                <button type='submit' class="waves-effect waves-light btn-small"><i class="material-icons">delete</i></button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

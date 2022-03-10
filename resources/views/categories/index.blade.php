@@ -23,8 +23,12 @@
                         <td>{{$category->description}}</td>
                         <td>{{count( $category->books->toArray() )}}</td>
                         <td>
-                            <a href="{{route('Categories.edit',$category->category_id)}}" class="waves-effect waves-light btn-small"><i class="material-icons">edit</i></a>
-                            <a class="waves-effect waves-light btn-small"><i class="material-icons">delete</i></a>
+                            <form action="{{route('Categories.destroy',$category->category_id)}}" method="POST">
+                                <a href="{{route('Categories.edit',$category->category_id)}}" class="waves-effect waves-light btn-small"><i class="material-icons">edit</i></a>
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="waves-effect waves-light btn-small"><i class="material-icons">delete</i></a>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

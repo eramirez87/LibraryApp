@@ -35,7 +35,7 @@ class Categories extends Controller
         return redirect()->intended('/Categories');
     }
     public function destroy($category_id){
-        Category::where('book_id',$category_id)->delete();
-        return redirect()->intended('/Books');
+        Category::where('category_id',$category_id)->delete();
+        return redirect()->intended('/Categories');
     }
 }

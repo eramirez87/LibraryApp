@@ -27,8 +27,12 @@
                         <td>{{$book->published_date}}</td>
                         <td>{{isset($book->_user->name) ? $book->_user->name : '---' }}</td>
                         <td>
-                            <a href="{{route('Books.edit',$book->book_id)}}" class="waves-effect waves-light btn-small"><i class="material-icons">edit</i></a>
-                            <a class="waves-effect waves-light btn-small"><i class="material-icons">delete</i></a>
+                            <form action="{{route('Books.destroy',$book->book_id)}}" method="POST">
+                                <a href="{{route('Books.edit',$book->book_id)}}" class="waves-effect waves-light btn-small"><i class="material-icons">edit</i></a>
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="waves-effect waves-light btn-small"><i class="material-icons">delete</i></a>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

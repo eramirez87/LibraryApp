@@ -38,8 +38,8 @@ class Users extends Controller
         User::where('user_id',$user_id)->update($post);
         return redirect()->intended('/Users');
     }
-    public function destroy($book_id){
-        User::where('book_id',$book_id)->delete();
+    public function destroy($user_id){
+        User::where('user_id',$user_id)->delete();
         return redirect()->intended('/Users');
     }
 }
