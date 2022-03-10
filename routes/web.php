@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    if(!Auth::check()){
+        return view('login');
+    }
+    return view("welcome");
 });
+
+Route::resource('Books', App\Http\Controllers\Books::class)->middleware('auth');
+Route::resource('Categories', App\Http\Controllers\Categories::class)->middleware('auth');
+Route::post("/autenticate",[\App\Http\Controllers\SessionsController::class,'autenticate'])->name("autenticate");
