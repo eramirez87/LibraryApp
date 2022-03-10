@@ -2,7 +2,7 @@
 @section('title', 'LibraryApp | Books')
 @section('content')
 <div class="row">
-    <div class="col s12">&nbsp;</div>
+    <div class="col s12"><h3>Books</h3></div>
     <div class='col s12'>
         <table>
             <thead>
