@@ -7,7 +7,6 @@
             <form action='{{route("Books.update",$book->book_id)}}' method="POST">
                 @method('PUT')
                 @csrf
-                <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
                 <div class="input-field col s6">
                     <input name='name' id="name" type="text" required value='{{ $book->name }}'>
                     <label for="name">Name</label>
