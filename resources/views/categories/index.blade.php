@@ -11,6 +11,7 @@
                         <th>#</th>
                         <th>Name</th>
                         <th>Description</th>
+                        <th>Books</th>
                         <th>&nbsp;</th>
                     </tr>
                 </thead>
@@ -20,6 +21,7 @@
                         <td>{{$category->category_id}}</td>
                         <td>{{$category->name}}</td>
                         <td>{{$category->description}}</td>
+                        <td>{{count( $category->books->toArray() )}}</td>
                         <td>
                             <a href="{{route('Categories.edit',$category->category_id)}}" class="waves-effect waves-light btn-small"><i class="material-icons">edit</i></a>
                             <a class="waves-effect waves-light btn-small"><i class="material-icons">delete</i></a>

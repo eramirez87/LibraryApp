@@ -16,6 +16,13 @@
                     <label for="description">Description</label>
                 </div>
                 <div class='col s12'>
+                    <ul class='collection'>
+                        @foreach ($categories->books as $book)
+                        <li class="collection-item">{{$book->name}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                <div class='col s12'>
                     <button type='submit' class='waves-effect waves-light btn'>update</button>
                 </div>
             </form>
