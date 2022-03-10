@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view("welcome");
 });
 
+Route::resource('Users', App\Http\Controllers\Users::class)->middleware('auth');
 Route::resource('Books', App\Http\Controllers\Books::class)->middleware('auth');
 Route::resource('Categories', App\Http\Controllers\Categories::class)->middleware('auth');
 Route::post("/autenticate",[\App\Http\Controllers\SessionsController::class,'autenticate'])->name("autenticate");

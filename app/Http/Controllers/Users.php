@@ -8,7 +8,7 @@ use App\Models\Book;
 use App\Models\Category;
 use App\Models\User;
 
-class Books extends Controller
+class Users extends Controller
 {
     private $folder = 'users.';
 
