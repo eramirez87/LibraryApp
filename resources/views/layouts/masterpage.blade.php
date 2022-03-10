@@ -21,9 +21,10 @@
                     <li><a href="login">Log In</a></li>
                     @endguest
                     @auth
-                    <li><a href="Books">Books</a></li>
-                    <li><a href="Categories">Categories</a></li>
-                    <li><a href="Users">Users</a></li>
+                    <li><a href="{{ route('Books.index') }}">Books</a></li>
+                    <li><a href="{{ route('Categories.index') }}">Categories</a></li>
+                    <li><a href="{{ route('Users.index') }}">Users</a></li>
+                    <li><a href="{{ route('logout') }}">LogOut</a></li>
                     @endauth
                 </ul>
                 </div>

@@ -31,6 +31,7 @@ class Books extends Controller
     public function edit($book_id){
         return view($this->folder . 'edit',[
             'categories' => Category::get(),
+            'users' => User::get(),
             'book' => Book::find($book_id),
         ]);
     }

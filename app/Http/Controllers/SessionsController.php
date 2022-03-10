@@ -21,4 +21,8 @@ class SessionsController extends Controller
             'email' => 'The provided credentials do not match our records.',
         ]);
     }
+    public function loginOut(){
+        Auth::logout();
+        return redirect()->intended('/');
+    }
 }

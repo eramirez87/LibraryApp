@@ -25,6 +25,15 @@
                     <label>Category</label>
                 </div>
                 <div class="input-field col s6">
+                    <select name='user' required>
+                      <option value='0'>Unasigned</option>
+                      @foreach ($users as $user)
+                      <option {{ ( $user->user_id == $book->user ) ? 'selected' : '' }} value="{{ $user->user_id }}">{{ $user->name }}</option>
+                      @endforeach
+                    </select>
+                    <label>User</label>
+                </div>
+                <div class="input-field col s6">
                     <input name='published_date' id="published_date" type="date" required value='{{ $book->published_date }}'>
                     <label for="published_date">Published at</label>
                 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 use App\Models\Book;
 use App\Models\Category;
@@ -22,7 +23,9 @@ class Users extends Controller
         return view( $this->folder . "create");
     }
     public function store(Request $request){
-        User::create( $request->all() );
+        $post = $request->all();
+        $post['password'] = Hash::make($post['password']);
+        User::create( $post );
         return redirect()->intended('/Users');
     }
     public function edit($user_id){
