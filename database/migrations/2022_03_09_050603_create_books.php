@@ -20,6 +20,7 @@ return new class extends Migration
             $table->bigInteger('category');
             $table->date('published_date');
             $table->bigInteger('user')->nullable(true);
+            $table->timestamps();
         });
     }
 

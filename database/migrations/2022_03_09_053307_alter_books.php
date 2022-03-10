@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::table('books', function (Blueprint $table) {
             #Relations
-            $table->foreign('user')->references('user_id')->on('users');
-            $table->foreign('category')->references('category_id')->on('categories');
+            //$table->foreign('user')->references('user_id')->on('users');
+            //$table->foreign('category')->references('category_id')->on('categories');
         });
     }
 

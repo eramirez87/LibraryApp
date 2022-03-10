@@ -22,4 +22,7 @@ class Book extends Model
     public function _category(){
         return $this->belongsTo(Category::class, 'category');
     }
+    public function _user(){
+        return $this->belongsTo(User::class, 'user', 'user_id');
+    }
 }
