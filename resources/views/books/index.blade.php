@@ -13,6 +13,7 @@
                         <th>Author</th>
                         <th>Category</th>
                         <th>Published at</th>
+                        <th>Avaliable</th>
                         <th>User</th>
                         <th>&nbsp;</th>
                     </tr>
@@ -25,6 +26,7 @@
                         <td>{{$book->author}}</td>
                         <td>{{$book->_category->name}}</td>
                         <td>{{$book->published_date}}</td>
+                        <td>{{($book->status) ? 'YES' : 'NO'}}</td>
                         <td>{{isset($book->_user->name) ? $book->_user->name : '---' }}</td>
                         <td>
                             <form action="{{route('Books.destroy',$book->book_id)}}" method="POST">

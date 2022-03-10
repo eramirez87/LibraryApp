@@ -37,6 +37,14 @@ class Books extends Controller
     }
     public function update($book_id, Request $request){
         $post = $request->except(['_token','_method']);
+        if(isset( $post['status'])){
+            $post['status'] = true;
+        }else{
+            $post['status'] = false;
+        }
+
+        #AQUI SE HARIA LA LLAMADA A LA FUNCION PARA ENVIO DE MENSAJES...
+
         Book::where('book_id',$book_id)->update($post);
         return redirect()->intended('/Books');
     }

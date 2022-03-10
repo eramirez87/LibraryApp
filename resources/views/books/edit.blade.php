@@ -37,6 +37,14 @@
                     <input name='published_date' id="published_date" type="date" required value='{{ $book->published_date }}'>
                     <label for="published_date">Published at</label>
                 </div>
+                <div class="col s6">
+                    <p>
+                        <label>
+                          <input name='status' type="checkbox" {{($book->status) ? 'checked' : '' }} value='1'/>
+                          <span>Avaliable</span>
+                        </label>
+                      </p>
+                </div>
                 <div class='col s12'>
                     <button type='submit' class='waves-effect waves-light btn'>Update</button>
 
