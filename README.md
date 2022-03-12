@@ -1,3 +1,8 @@
+#### Install requeriments
+PHP 8 or above.
+
+Laravel 9 or above.
+
 #### Install steps
 This project is developed in laravel, using blade templates.
 
