@@ -15,7 +15,7 @@ class Users extends Controller
 
     public function index(){
         $data = [
-            'users' => User::with('books')->get()
+            'users' => User::with('books')->paginate(2)
         ];
         return view( $this->folder . "index",$data);
     }

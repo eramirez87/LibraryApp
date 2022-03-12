@@ -36,6 +36,10 @@
             </thead>
         </table>
     </div>
+    <div col s12>
+        <p>&nbsp;</p>
+        {{ $users->links("layouts.paginator") }}
+    </div>
     <div class="fixed-action-btn">
         <a href='{{route("Users.create")}}' class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
     </div>
