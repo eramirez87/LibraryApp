@@ -14,7 +14,7 @@ class Books extends Controller
 
     public function index(){
         $data = [
-            'books' => Book::with('_user','_category')->get()
+            'books' => Book::with('_user','_category')->paginate(5)
         ];
         return view( $this->folder . "index",$data);
     }

@@ -13,7 +13,7 @@ class Categories extends Controller
 
     public function index(){
         $data = [
-            'categories' => Category::with('books')->get()
+            'categories' => Category::with('books')->paginate(5)
         ];
         return view( $this->folder . "index",$data);
     }
