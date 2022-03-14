@@ -11,7 +11,7 @@
             <div class='card-content'>
                 <div class='row'>
                     <div class="input-field col s12 m6">
-                        <input id="email" name='email' type="email" class="validate">
+                        <input id="email" name='email' type="email" class="validate" autocomplete="off">
                         <label for="email">Mail</label>
                     </div>
                     <div class="input-field col s12 m6">
